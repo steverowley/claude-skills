@@ -10,7 +10,7 @@ A skill is just a folder with a `SKILL.md` file (the instructions) plus any supp
 |-------|--------------|
 | [`project-planning-docs`](#project-planning-docs) | Turns a rough project idea into a full set of pre-planning documents for a software **or** game project. |
 
-Skills are stored as zip archives in the repo root (e.g. `project-planning-docs.zip`) so they're easy to download and drop into Claude.
+Each skill lives in its own folder under [`skills/`](skills/), following the standard skill layout (a `SKILL.md`, a `README.md`, a `QUICK_REFERENCE.md`, supporting `references/`, and a `tests/` folder).
 
 ## project-planning-docs
 
@@ -31,21 +31,24 @@ It's built for non-technical and semi-technical people (founders, marketers, pro
 
 *Game track:* Game Concept/Pitch · Game Design Document (GDD) · Technical Design · Art Bible/Style Guide · Project Plan/Roadmap · Test/QA Plan · Risk Register
 
-**What's inside the package:**
+**What's inside the folder** ([`skills/project-planning-docs/`](skills/project-planning-docs/)):
 
 ```
 project-planning-docs/
 ├── SKILL.md                       # the instructions Claude follows
-└── references/
-    ├── software-suite.md          # document structure for software projects
-    └── game-suite.md              # document structure for game projects
+├── README.md                      # what the skill does and how to use it
+├── QUICK_REFERENCE.md             # one-page cheat sheet
+├── references/
+│   ├── software-suite.md          # document structure for software projects
+│   └── game-suite.md              # document structure for game projects
+└── tests/
+    └── quiz.md                    # self-check quiz for the skill's behavior
 ```
 
 ## Using a skill
 
-1. Download the skill's `.zip` from this repo.
-2. Add it to Claude wherever skills are supported (for example, upload it in the Claude app, or place the unzipped folder in your Claude Code skills directory).
-3. Just describe your task in plain English — Claude picks up the skill automatically when your request matches what it's for. For `project-planning-docs`, that's anything like *"help me plan my app idea"* or *"what documents do I need to brief a dev team?"*
+1. Copy the skill's folder from [`skills/`](skills/) into wherever your tooling loads skills from (for example, your Claude Code skills directory).
+2. Just describe your task in plain English — Claude picks up the skill automatically when your request matches what it's for. For `project-planning-docs`, that's anything like *"help me plan my app idea"* or *"what documents do I need to brief a dev team?"*
 
 ## License
 
